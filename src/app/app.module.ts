@@ -7,12 +7,16 @@ import { ChansonsComponent } from './chansons/chansons.component';
 import { AddChansonComponent } from './add-chanson/add-chanson.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateChansonComponent } from './update-chanson/update-chanson.component';
+import { LoginComponent } from './login/login.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 @NgModule({
   declarations: [
     AppComponent,
     ChansonsComponent,
     AddChansonComponent,
-    UpdateChansonComponent
+    UpdateChansonComponent,
+    LoginComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

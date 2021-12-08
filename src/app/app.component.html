@@ -19,19 +19,20 @@
 Chansons
 </a>
 <div class="dropdown-menu">
-<a class="dropdown-item" routerLink="/add-chanson">Ajouter</a>
+<a *ngIf="authService.isAdmin()" class="dropdown-item" routerLink="/add-chanson">Ajouter</a>
 <a class="dropdown-item" routerLink="/chansons">Lister</a>
 </div>
 </li>
 </ul>
 <ul class="navbar-nav ml-auto" >
+    <li> <a class="nav-link">{{authService.loggedUser}}</a></li>
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
 [username]
 </a>
 <div class="dropdown-menu">
-<a class="dropdown-item" href="#">login</a>
-<a class="dropdown-item" href="#">logout</a>
+    <a *ngIf="!authService.isloggedIn" class="dropdown-item" routerLink = "login">login</a>
+    <a *ngIf="authService.isloggedIn" class="dropdown-item" (click) = "onLogout()">logout</a>
 <a class="dropdown-item" href="#">Profile</a>
 </div>
 </li>
